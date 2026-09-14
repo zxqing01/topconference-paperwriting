@@ -1,0 +1,4 @@
+interface:
+  display_name: "Top-Conference Paper Writing"
+  short_description: "Draft and revise rigorous top-conference papers"
+  default_prompt: "Use $top-conference-paper-writing to draft or revise this top-conference manuscript with consistent experiments and bilingual notes."
