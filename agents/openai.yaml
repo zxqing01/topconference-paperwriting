@@ -1,4 +1,4 @@
 interface:
-  display_name: "Top-Conference Paper Writing"
+  display_name: "Top Conference Paper Writing"
   short_description: "Write, revise, and verify papers section by section"
-  default_prompt: "Use $top-conference-paper-writing to write or revise this manuscript for the target conference, preserving its evidence and coordinating the main text, appendix, citations, and requested artifacts."
+  default_prompt: "Use $topconference-paperwriting to write or revise this manuscript for the target conference, preserving its evidence and coordinating the main text, appendix, citations, and requested artifacts."

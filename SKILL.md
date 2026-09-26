@@ -1,9 +1,9 @@
 ---
-name: top-conference-paper-writing
-description: Draft, revise, compress, and check top-conference research papers, especially in machine learning, computer vision, NLP, robotics, and embodied AI. Use for full manuscripts or individual sections, citation-only additions, method and appendix clarity, experimental narration, LaTeX layout, bilingual revision comparisons, and evidence-grounded submission or reviewer-style checks. Supports Chinese instructions and publication-quality English; adapts to the target venue and year.
+name: topconference-paperwriting
+description: Draft, revise, and check conference research papers in machine learning, computer vision, NLP, robotics, and related fields. Use for manuscripts or individual sections, citation-only edits, method and appendix clarity, experimental narration, LaTeX layout, bilingual revision comparisons, and evidence-grounded submission or reviewer-style checks. Adapt to the author's language, target venue, and year.
 ---
 
-# Top-Conference Paper Writing
+# Top Conference Paper Writing
 
 One integrated skill for a whole paper or a local edit. Build an accurate, persuasive publication argument: a consequential problem, a specific gap, an identifiable contribution, and evidence that supports it. Adapt the structure to empirical, theoretical, systems, or benchmark work. A venue does not have one mandatory prose style.
 
@@ -43,7 +43,7 @@ Read only what the task needs. For a full manuscript, read the applicable guides
 | Tables, captions, equations, layout compression, bilingual HTML, artifact updates | [LaTeX and delivery](references/latex-and-delivery.md) |
 | Venue/year rules, published-paper examples, full consistency checks, referee reports | [Verification and review](references/verification-and-review.md) |
 | VLA, navigation, robot control, visual compression, adaptive computation | [Embodied-AI specialization](references/embodied_ai_writing_patterns.md) |
-| This user's recurring writing and delivery preferences | [Author defaults](references/author-defaults.md) |
+| Optional author preferences for language, editing scope, and delivery | [Author preferences](references/author-defaults.md) |
 
 ## 3. Keep evidence and writing synchronized
 
