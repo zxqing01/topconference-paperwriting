@@ -1,88 +1,55 @@
-# Writing patterns for embodied AI and visual decision papers
+# Specialization: embodied AI, visual decision making, and adaptive computation
 
-This reference generalizes the working pattern behind the skill to a research direction rather than one manuscript. It applies to VLA, vision-language navigation, visual control, robot learning, embodied agents, adaptive visual computation, and related computer-vision systems.
+Use only for papers in which these concepts apply. The general chapter guides remain authoritative; this file does not impose a navigation or two-stage compression story on other fields.
 
-## Core narrative
+## A domain-specific argument
 
-Use an evidence chain that a reviewer can follow:
+For a perception-action system, connect the computational bottleneck to the task: the agent receives observations, acts, and changes the observations available next. Explain why the proposed use of state, history, representation, or resource allocation addresses a specific limitation.
 
-1. **Task pressure:** what the agent must perceive, reason about, and control, and what resource or reliability constraint matters;
-2. **Closed-loop or interactive difficulty:** how an action changes future observations, state, or available evidence;
-3. **Gap:** why static compression, one-shot perception, or a current-step-only heuristic is insufficient;
-4. **Method:** the smallest set of mechanisms that addresses the gap;
-5. **Evidence:** task performance, efficiency, robustness, and ablations that isolate each mechanism;
-6. **Implication:** what the results establish about the design principle.
+Closed-loop context is not itself proof of novelty. Distinguish what is new in the decision rule, representation, feedback path, training signal, or evaluation. Avoid claiming that all visual compression methods are static or context-free without a literature basis.
 
-The introduction should not read as a catalogue of modules. Give each component a role in the causal story and reserve implementation detail for the method section.
+For complementary stages, identify the computation each stage changes. Representation extraction and downstream sequence processing may address different costs; state their relationship without assuming the sum of isolated latency savings equals the joint saving.
 
-## Section-level guidance
+## Inputs, tokens, and sequence construction
 
-### Abstract
+Keep image resolution, patch size, token-grid size, concatenated view layout, feature width, and language-model sequence length distinct. Removing a class token or register tokens changes sequence composition; it does not change a patch grid's spatial dimensions.
 
-Move from problem to method to evidence. Mention the interaction or closed-loop constraint when it is central, then name the main mechanism(s), give one or two verified outcomes, and compare efficiency with a named reference system. Use `baseline` when the reference is a baseline. Do not crowd the abstract with every split or every ablation.
+Describe the actual selected encoders. Replace vague “any prefix tokens” wording with a concrete statement when the checkpoint and output path are known. Conditional wording remains valid for a genuinely generic implementation. A pretrained dataset identifies the checkpoint's training provenance, not necessarily the authors' task-specific training.
 
-### Introduction
+Explain whether two views share a composed grid, are separately encoded, or are concatenated as sequences. Do not infer semantic coordinates from row indices alone.
 
-A strong sequence is:
+## Distillation and adaptation
 
-- task and computational or control bottleneck;
-- why future observations, action feedback, or long-horizon reasoning makes the problem harder;
-- the precise gap in existing methods;
-- the proposed idea and how its stages address the gap;
-- concise contributions tied to measurable evidence.
+State teacher/student roles, branch dimensions, translator behavior, frozen/trainable modules, and which path remains at inference. Separate teacher pretraining, student initialization, representation distillation, and downstream policy adaptation.
 
-Start contribution paragraphs with “We” when reporting the authors' design or analysis. Avoid a first sentence that lists many controlled variables; summarize the purpose first.
+For token losses, identify matching axes, normalization, feature scales, and whether relation matching compares token-token or sample-sample structure. A citation to a loss family does not establish an exact custom objective.
 
-### Related work
+## Dynamic token allocation
 
-Organize by the limitation the new method addresses: efficient representation learning, visual token compression, adaptive computation, visual distillation, embodied decision making, or closed-loop control. Do not list papers without a comparison axis. End each related-work group with the unresolved issue relevant to the method.
+Distinguish:
+- a dense visual-token grid;
+- a candidate set with a scoring cue;
+- an initial reserve;
+- quotas or additional selection stages;
+- the final retained set and its ordering;
+- the per-step budget and the statistic reported in a table.
 
-### Method
+A score equal to one at every anchor candidate does not mean every candidate is reserved. Check loops, duplicates, indexing, top-k, quotas, and capacity before explaining the count. State row/column intersections explicitly when natural language could imply entire rows or columns.
 
-Define inputs, outputs, symbols, and the control-time index before describing modules. Explain what is trained, frozen, or deterministic. If a selection or allocator has no trainable parameters, state that as a property of the design and explain how scores, budgets, and constraints produce the retained set. Keep equations adjacent to the variables they define.
+Check where allocation happens relative to the projector and backbone. Dense operations before selection remain dense. Padded batches may execute at the largest retained count in the batch; masked padding prevents unwanted attention contributions but does not automatically yield ragged-compute savings.
 
-### Experiments
+For masking, verify what positions are masked as keys/values, what padded-query outputs are ignored, and how the loss or output path treats padding. Do not infer a complete implementation from a generic sentence about an attention mask.
 
-Separate the questions answered by the main table, qualitative examples, component ablations, supervision ablations, compute studies, and robustness or budget studies. Each paragraph should state the comparison condition, the result, and the interpretation. Do not repeat the complete experimental setup in every paragraph.
+## Sequential execution
 
-### Conclusion
+Differentiate history features, temporal scores, previous actions, decoder caches, and environment state. A cache inside one autoregressive call does not imply reuse across successive observations or control steps.
 
-Restate the design principle and the strongest verified outcomes. End with the contribution's significance for the target task or research direction. Avoid generic praise, deployment guarantees, or a new claim that was not evaluated.
+If a mode raises the budget, distinguish its trigger, its requested minimum, and the final count after caps or other rules. An observed trace without activation is not evidence that the trigger is unnecessary or defective. Explain only the mechanism needed to interpret the plotted case.
 
-## Style and reviewer-facing discipline
+## Baselines and resources
 
-Write confidently without overstating. Remove unnecessary “we evaluate whether”, “these results support”, and “it is worth noting” phrases when the result itself is sufficient. Avoid apology-like limitations, speculative reviewer objections, and defensive descriptions of ordinary design choices. Preserve necessary scope statements, uncertainty, and reproducibility information.
+An external model result and an internal dense control can legitimately use different configurations. Document their roles and interpret each comparison accordingly. An ablation should not be compared against a different baseline merely because their names sound similar.
 
-Prefer:
+Keep task success, path quality, FLOPs, latency, memory, energy, and deployment rate distinct. Simulated evaluation does not alone establish real-world flight performance. FLOP savings do not numerically imply the same latency reduction.
 
-- concrete operations over abstractions;
-- active voice over passive chains;
-- one claim per sentence when the paragraph is dense;
-- a measured direction and magnitude over “improves performance” alone;
-- a mechanism interpretation tied to the observed comparison.
-
-Avoid:
-
-- AI-like parallel lists in the opening sentence;
-- headings that contain redundant implementation detail;
-- unexplained shorthand in table rows;
-- a conclusion that merely repeats the experiment setup;
-- a Chinese translation that is stronger, vaguer, or more specific than the English.
-
-## Reusable terminology and consistency checks
-
-Build a project-specific ledger before editing. Record the canonical form of:
-
-- the method name and acronym;
-- the reference system and baseline wording;
-- task and dataset split names;
-- metrics, units, and statistical summaries;
-- module names and headings;
-- fixed, adaptive, mean, per-step, and compute budgets;
-- teacher, student, expert, and frozen/trainable components.
-
-When a heading is shortened—for example, from a detailed mechanism name to `Adaptive budget`—check the body, caption, table, and Chinese comparison for wording that now conflicts with the shorter scope.
-
-## Final audit
-
-Before submission or handoff, verify the claim-evidence chain, terminology, numerical consistency, citation coverage, equation references, table labels, and bilingual alignment. If the source is only a LaTeX fragment, run structural checks and say that a full compilation was not performed. Do not silently repair missing data or citations.
+A complete control loop may include rendering, sensing, transfer, state initialization, and action application beyond neural inference. Define the timer boundaries actually used; do not label a partial pipeline as an entire real-world control cycle.

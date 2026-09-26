@@ -1,47 +1,77 @@
 ---
 name: top-conference-paper-writing
-description: Draft, revise, and audit top-conference papers in machine learning, computer vision, VLA, robotics, and embodied AI, preserving claims, equations, citations, and table values while producing concise, non-defensive English and aligned Chinese comparison notes. Use for experiment narration, ablation organization, terminology consistency, and final manuscript cleanup.
+description: Draft, revise, compress, and check top-conference research papers, especially in machine learning, computer vision, NLP, robotics, and embodied AI. Use for full manuscripts or individual sections, citation-only additions, method and appendix clarity, experimental narration, LaTeX layout, bilingual revision comparisons, and evidence-grounded submission or reviewer-style checks. Supports Chinese instructions and publication-quality English; adapts to the target venue and year.
 ---
 
-# Top Conference Paper Writing
+# Top-Conference Paper Writing
 
-Treat the manuscript as a publication argument. Make the central contribution easy to identify, connect each experiment to a concrete question, and end each result paragraph with the implication supported by the data. Do not turn the paper into a project log or a self-audit.
+One integrated skill for a whole paper or a local edit. Build an accurate, persuasive publication argument: a consequential problem, a specific gap, an identifiable contribution, and evidence that supports it. Adapt the structure to empirical, theoretical, systems, or benchmark work. A venue does not have one mandatory prose style.
 
-## Scope and priorities
+## 1. Establish the task without expanding it
 
-Use this skill when the user asks to draft, revise, compress, translate, reorganize, or clean a top-conference manuscript, especially an ML, VLA, robotics, embodied-AI, or computer-vision paper. It also applies when the user wants an abstract, introduction, method, results, ablation, conclusion, LaTeX cleanup, or bilingual original/revised comparison.
+Use the conversation and supplied artifacts to identify the active version, requested section, permitted operation, and target venue/year. Do not require a questionnaire when these are already clear.
 
-Keep the author's claims, reported numbers, experimental scope, equation definitions, table values, labels, and citation keys intact unless the user explicitly changes them. Never invent an experiment, metric, result, citation, or implementation detail. If a result is provisional, label it as such in the table or prose instead of silently presenting it as measured.
+| Request | Scope of work |
+|---|---|
+| Explain / assess / compare alternatives | Read and answer; do not silently edit files. |
+| Draft or substantially revise | Organize the argument within the available evidence; mark missing inputs in author notes. |
+| Only necessary changes | Correct factual errors, contradictions, undefined notation, broken references, or meaning-blocking ambiguity. Keep optional style changes separate. |
+| Only add citations | Add citation commands and necessary bibliography entries; preserve all existing prose, numbers, and equations. |
+| Change tense / delete one sentence / shorten a line | Make the smallest requested edit and check its immediate dependencies. |
+| Update HTML / LaTeX / PDF | Identify the authoritative text and synchronize the requested artifacts using the delivery guide. |
+| Review as a referee | Evaluate the research from the supplied evidence, using the review guide; do not automatically rewrite it. |
 
-## Writing workflow
+Treat restrictions as local to their stated scope: a main-text minimal-edit instruction does not automatically prohibit fuller appendix clarification. Later instructions supersede earlier ones. A comparison page's proposed revision is not evidence that the author accepted every change. Do not restore a rejected paragraph or change settled wording as a side effect of regeneration.
 
-1. **Identify the paper's claim.** State the problem, the bottleneck, the proposed mechanism, and the evidence that establishes its value. Organize paragraphs around a question, setup, result, and interpretation. Remove repeated setup lists when the surrounding context already fixes them.
-2. **Strengthen the English.** Prefer direct active sentences, concrete nouns, and short causal links. Use the method's name or “we” when the paragraph reports the authors' analysis. Remove hedging, apology-like language, defensive caveats, and generic claims of significance. Keep methodological limits that are necessary for accuracy.
-3. **Make experiments do argumentative work.** Distinguish component, distillation, token-allocation, budget-sensitivity, and role-retention questions. State the comparison condition before the result, report the measured direction and split-level evidence, then give one plain-language interpretation. Do not repeat a conclusion already established by the next sentence.
-4. **Maintain a terminology ledger.** Pick one name for each mechanism and use it in headings, tables, captions, prose, and Chinese notes. Keep model names, dataset splits, metrics, and mathematical symbols unchanged. Read [references/ablation_and_terminology.md](references/ablation_and_terminology.md) when the task involves ablations or terminology decisions.
-5. **Produce bilingual comparisons when requested.** For every segment, keep the original English, revised English, original Chinese, and revised Chinese aligned. Chinese must express the same claims, conditions, numbers, citations, and equations; it may be more natural syntactically, but it must not add or weaken evidence. Keep LaTeX equations and citation keys in copyable form.
+Preserve original comparison panels and user-authored material. Do not remove comments, appendices, declarations, files, or references merely because a generic cleanup rule suggests doing so. An appendix-only assignment does not authorize unrelated declaration changes. Required dependent repairs, such as resolving references to a deleted section, remain within scope.
 
-The domain patterns and reusable decisions extracted from this workflow are collected in [references/embodied_ai_writing_patterns.md](references/embodied_ai_writing_patterns.md). Read it when the manuscript concerns VLA, embodied AI, robotics, visual decision making, or adaptive computation, or when the user asks for a comprehensive consistency pass. The reference is a distilled rulebook rather than a transcript; adapt examples to the current method.
+### When drafting a new paper from notes
 
-## LaTeX and final-manuscript cleanup
+Separate established work from proposed experiments and ideas. Build an outline around the central question and map each intended claim to available evidence. Use the paper type to choose sections rather than filling a fixed template. Draft the method or theoretical argument and the evidence-bearing sections precisely, then align the introduction, abstract, and conclusion with what they establish. An outline is a working aid, not a mandatory approval gate. Ask for missing facts only when they prevent a sound draft; keep unknown settings and results in explicit author notes rather than fabricating them in publishable prose.
 
-When given a final LaTeX source, remove full-line commented-out material. Preserve escaped percentages (`\%`) and syntactic line-continuation markers such as the `%` in `\resizebox{...}{...}{%`; they are not discarded prose. Do not alter active equations, `\label`/`\ref` pairs, table numbers, or numeric cells as a side effect of comment removal.
+## 2. Route to the relevant chapter
 
-Before delivery, check:
+Read only what the task needs. For a full manuscript, read the applicable guides in manuscript order rather than loading every specialized topic at once.
 
-- no full-line comments from the discarded draft remain;
-- every display equation and label is still present and in the intended order;
-- table numbers and reported metrics are unchanged;
-- every citation key is available in the referenced BibTeX file, or the missing key is reported;
-- fixed budgets, adaptive budgets, and reported means are not conflated;
-- the bilingual comparison has the same paragraph count and no missing equations.
+| Section or operation | Detailed guidance |
+|---|---|
+| Title, abstract, introduction, contribution structure | [Opening sections](references/opening-sections.md) |
+| Related work, source verification, citation-only edits, BibTeX | [Related work and citations](references/related-work-and-citations.md) |
+| Method, mathematical notation, algorithms, theory details, appendix, main-text cross-references | [Method and appendix](references/method-and-appendix.md) |
+| Setup, baselines, main results, ablations, qualitative examples, efficiency, terminology | [Experiments and results](references/ablation_and_terminology.md) |
+| Conclusion, limitations, statements | [Closing sections](references/closing-sections.md) |
+| Tables, captions, equations, layout compression, bilingual HTML, artifact updates | [LaTeX and delivery](references/latex-and-delivery.md) |
+| Venue/year rules, published-paper examples, full consistency checks, referee reports | [Verification and review](references/verification-and-review.md) |
+| VLA, navigation, robot control, visual compression, adaptive computation | [Embodied-AI specialization](references/embodied_ai_writing_patterns.md) |
+| This user's recurring writing and delivery preferences | [Author defaults](references/author-defaults.md) |
 
-Compile the manuscript when a complete preamble and bibliography are available. If the user supplied only a body fragment, perform structural and text checks and state that a full compilation was not possible. Deliver the cleaned `.tex` plus the requested comparison artifact (HTML or Markdown) when the workflow calls for it.
+## 3. Keep evidence and writing synchronized
 
-## Style decisions from the working pattern
+For a substantial revision, maintain a compact working ledger, not a compulsory deliverable. Track:
 
-Use a concise, publication-facing table vocabulary. `Configuration` is a suitable first-column heading; avoid unnecessary `Variant` labels and avoid putting implementation explanations into long row names. Put configuration details in the caption or the paragraph when a short row label is unambiguous. For a distillation study, a short row such as `No distillation` can be defined in the caption or first mention rather than expanded into a long table label.
+- **Claims:** what is asserted; supporting result, derivation, source, or implementation; relevant condition.
+- **Terminology and quantities:** canonical names, baselines, splits, units, aggregation, fixed versus adaptive values.
+- **Notation and references:** symbol meaning, first definition, dimensions, labels, and the exact section an outgoing reference promises.
+- **Versions and decisions:** authoritative source, accepted changes, local constraints, generated artifacts.
 
-For comparisons involving a dynamic budget, call a constant value a **fixed budget** and call the dynamic setting's reported statistic its **mean budget**. Do not call a fixed reference a “matched budget” unless it truly matches another method's measured average. Name the actual mechanism—such as evidence scoring, adaptive budgeting, or role-aware retention—instead of using a vague umbrella term such as “control-aware selection”.
+Use the latest supplied manuscript unless the user designates another authority. Existing audit reports and generated HTML help locate evidence; they do not replace raw code, tables, or original sources. If code and manuscript conflict, identify the concrete conflict before changing either. Distinguish source inspection, recalculation, execution, compilation, and visual verification; claim only what was done.
 
-Keep the final synthesis sentence when it states the paper's contribution, but remove nearby sentences that merely restate that the comparison was performed. End with the evidence-backed mechanism and its navigation or efficiency implication, without adding a new unmeasured claim.
+Never invent an experimental setting, run, metric unit, statistic, citation, theorem, or implementation detail. Preserve verified numbers and claims through stylistic edits. A demonstrated error may be corrected when within the requested scope, with the correction made explicit. Do not conceal uncertainty by fluent rewriting.
+
+## 4. Write with a clear research voice
+
+Lead with the substantive point. Prefer concrete operations and results to module catalogues, repeated setup lists, and generic praise. A paragraph can end on a result; do not append a compulsory sentence such as “These results support our method.” Add an interpretation only if it contributes information and the evidence supports it.
+
+Choose the subject for the sentence's function: **we** for an author action; a **method or component** for its behavior; a **figure or table** for displayed evidence. Do not force every paragraph to begin with one form. Use present tense for method descriptions and reported table/figure findings when that fits the manuscript; past tense remains appropriate for completed procedures or historical work. Uniformity must preserve temporal meaning.
+
+Keep contribution ownership clear while crediting borrowed components. Avoid defensive digressions and speculative objections in paper prose, but preserve actual assumptions, meaningful limitations, null results, and measured uncertainty. Do not turn “preserves” into “improves,” “mean best” into “best on every split,” or an observed association into a proven mechanism without evidence.
+
+When the user asks to follow another paper, inspect the relevant passage. Explain which stylistic choice transfers and which factual or mathematical distinctions still apply. Published precedent is evidence of usage, not proof of correctness or a venue requirement.
+
+## 5. Deliver the requested change and verify proportionately
+
+A sentence edit usually needs a semantic and grammar check, not a full paper audit. Equations, statistics, source attribution, or artifact changes need the corresponding targeted checks. A full-paper assignment needs the cross-section review in [Verification and review](references/verification-and-review.md).
+
+For bilingual output, align claims, conditions, scope, quantities, citations, and equations. For before/after HTML, the default is original on the left, revision on the right, English above Chinese. Keep the clean reading version free of internal review notes.
+
+For file work, finish the authorized changes, validate the affected artifacts, and provide the actual updated files with concise status. Do not say a PDF was compiled or a layout fixed when only its source changed. If required inputs or tools are unavailable, deliver the useful verified portion and identify the exact missing check. Optional polishing must not delay a small completed edit.
