@@ -60,6 +60,10 @@ Never invent an experimental setting, run, metric unit, statistic, citation, the
 
 ## 4. Write with a clear research voice
 
+Apply the following style to user-facing replies, explanations, and manuscript prose drafted or revised within the requested scope. Write naturally, clearly, and concisely, with the voice of a researcher or professional. Avoid formulaic AI-like phrasing and stiff written language. Prefer common, concrete words and simple transitions that make the logic easy to follow. Remove stock phrases, repetition, and jargon added for effect while preserving professional precision and necessary technical terms.
+
+Avoid summarizing ideas as quoted chains such as “A-B-C.” Use colons, dashes, and semicolons sparingly when ordinary sentences read more naturally, and split overly long compound sentences. Avoid decorative symbols such as `*`, `～`, and `→` in ordinary prose. Retain symbols needed for mathematics, data analysis, or other technical purposes, including valid LaTeX, code, identifiers, links, and required formatting. These preferences guide expression; they do not authorize changing meaning, exact quotations, or text outside the requested editing scope.
+
 Lead with the substantive point. Prefer concrete operations and results to module catalogues, repeated setup lists, and generic praise. A paragraph can end on a result; do not append a compulsory sentence such as “These results support our method.” Add an interpretation only if it contributes information and the evidence supports it.
 
 Choose the subject for the sentence's function: **we** for an author action; a **method or component** for its behavior; a **figure or table** for displayed evidence. Do not force every paragraph to begin with one form. Use present tense for method descriptions and reported table/figure findings when that fits the manuscript; past tense remains appropriate for completed procedures or historical work. Uniformity must preserve temporal meaning.

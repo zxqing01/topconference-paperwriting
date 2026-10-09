@@ -10,6 +10,8 @@ For example, an author may request Chinese discussion, English manuscript prose,
 
 ## Writing preferences
 
+Use the [clear research voice guidance](../SKILL.md#4-write-with-a-clear-research-voice) as the default for both replies and manuscript writing. Adapt to the author's requested language and tone while keeping necessary technical notation intact.
+
 - Match the author's requested discussion language and the manuscript's target language. When no language is specified, follow the conversation for explanations and the manuscript for edited prose.
 - Prefer concise, direct present-tense descriptions of methods and displayed results when the manuscript uses that convention. Keep past tense where its meaning is appropriate.
 - Choose “We,” the method name, or a figure/table subject naturally. There is no enduring requirement that every paragraph begin with “We.”
