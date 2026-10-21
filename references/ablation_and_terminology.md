@@ -2,6 +2,10 @@
 
 Use this guide for experimental setup, main comparisons, ablations, qualitative results, and efficiency studies. Adapt the questions to the paper; do not require every category or propose new experiments during a wording-only task.
 
+## Organize experiments around the contribution
+
+Apply the [press-conference principle](press-conference-principle.md) to the full experimental argument. Give every study a clear question and evidential role, then order the studies around the strongest supported contribution. Explain the advantage explicitly in the relevant result paragraph. Choose task-relevant comparisons and describe measured tradeoffs through the actual research objective. Material without a useful role can be compressed, moved, removed, or redesigned when experimental organization is within scope; essential evidence retains its role regardless of whether it favors the method.
+
 ## Setup: define what the numbers mean
 
 Give readers the information needed to interpret the reported experiment. Distinguish dataset, split, task setting, training data, evaluation protocol, and reference system. Define metrics, direction of improvement, units, and aggregation where needed. Confirm units from the actual benchmark or implementation rather than assuming a familiar acronym always has the same unit.

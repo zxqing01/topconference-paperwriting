@@ -1,6 +1,6 @@
 ---
 name: topconference-paperwriting
-description: Draft, revise, and check conference research papers in machine learning, computer vision, NLP, robotics, and related fields. Use for manuscripts or individual sections, citation-only edits, method and appendix clarity, experimental narration, LaTeX layout, bilingual revision comparisons, and evidence-grounded submission or reviewer-style checks. Adapt to the author's language, target venue, and year.
+description: Draft, revise, and check conference research papers in machine learning, computer vision, NLP, robotics, and related fields. Use for manuscripts or individual sections, contribution-centered narratives, defensive-writing checks, citation-only edits, method and appendix clarity, experimental narration, LaTeX layout, bilingual comparisons, and evidence-grounded submission or reviewer-style checks. Adapt to the author's language, target venue, and year.
 ---
 
 # Top Conference Paper Writing
@@ -14,6 +14,7 @@ Use the conversation and supplied artifacts to identify the active version, requ
 | Request | Scope of work |
 |---|---|
 | Explain / assess / compare alternatives | Read and answer; do not silently edit files. |
+| Check defensive writing | Identify each relevant passage, explain the problem, and suggest a revision using the press-conference guide. |
 | Draft or substantially revise | Organize the argument within the available evidence; mark missing inputs in author notes. |
 | Only necessary changes | Correct factual errors, contradictions, undefined notation, broken references, or meaning-blocking ambiguity. Keep optional style changes separate. |
 | Only add citations | Add citation commands and necessary bibliography entries; preserve all existing prose, numbers, and equations. |
@@ -35,6 +36,7 @@ Read only what the task needs. For a full manuscript, read the applicable guides
 
 | Section or operation | Detailed guidance |
 |---|---|
+| Contribution-centered narrative, experimental organization, defensive-writing diagnosis and revision | [Press-conference principle](references/press-conference-principle.md) |
 | Title, abstract, introduction, contribution structure | [Opening sections](references/opening-sections.md) |
 | Related work, source verification, citation-only edits, BibTeX | [Related work and citations](references/related-work-and-citations.md) |
 | Method, mathematical notation, algorithms, theory details, appendix, main-text cross-references | [Method and appendix](references/method-and-appendix.md) |
@@ -59,6 +61,8 @@ Use the latest supplied manuscript unless the user designates another authority.
 Never invent an experimental setting, run, metric unit, statistic, citation, theorem, or implementation detail. Preserve verified numbers and claims through stylistic edits. A demonstrated error may be corrected when within the requested scope, with the correction made explicit. Do not conceal uncertainty by fluent rewriting.
 
 ## 4. Write with a clear research voice
+
+Apply the press-conference principle throughout drafting, revision, compression, and experimental organization. Identify the strongest supported advantage and organize the paper around that contribution. Present the research argument, make the advantage explicit, and give every experiment a clear role in establishing it. Read [Press-conference principle](references/press-conference-principle.md) for narrative decisions and defensive-writing checks. Apply the relevant principle within a local edit's existing scope; a style preference does not authorize restructuring the paper.
 
 Apply the following style to user-facing replies, explanations, and manuscript prose drafted or revised within the requested scope. Write naturally, clearly, and concisely, with the voice of a researcher or professional. Avoid formulaic AI-like phrasing and stiff written language. Prefer common, concrete words and simple transitions that make the logic easy to follow. Remove stock phrases, repetition, and jargon added for effect while preserving professional precision and necessary technical terms.
 

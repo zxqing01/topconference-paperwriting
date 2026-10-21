@@ -4,6 +4,8 @@
 
 Recover four facts from the supplied material: the research problem, the specific unresolved obstacle, the proposed idea, and the strongest evidence. For theory, evidence may be a theorem with conditions; for systems, a measured operating regime; for a benchmark, a new evaluation capability rather than a model improvement. Do not impose a two-stage architecture or a compression narrative on unrelated work.
 
+Use the [press-conference principle](press-conference-principle.md) to identify the strongest established advantage and make it the focus of the opening. Establish its value before discussing implementation details or qualifications that do not affect the opening claim.
+
 If essential results are absent, draft the supported problem and method portions and place the missing evidence in an author note. Do not fill numerical slots with plausible values. For sentence-level requests, use the surrounding paragraph rather than reconstructing the whole paper.
 
 ## Title

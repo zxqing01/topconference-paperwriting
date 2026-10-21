@@ -22,6 +22,8 @@
 | 调整 LaTeX 与交付形式 | 处理表格、图注、公式、排版，以及按要求更新中英对照 HTML 或 PDF。 |
 | 检查或模拟审阅稿件 | 核对跨章节一致性，查阅当年会议规定，形成有证据依据的审稿式评估。 |
 
+内置的[学术发布会写作原则](references/press-conference-principle.md)先找出论文最有证据支撑的核心优势，再围绕它组织稿件，避免写成研发流水账。它要求明确讲清优势，让每项实验服务于论证，保持摘要、引言和结论简洁，并删除不必要的防御性表达，同时保留必要条件和证据边界。
+
 另有具身智能、视觉决策与自适应计算专题，仅在论文涉及这些内容时使用。
 
 ## 安装
@@ -125,6 +127,16 @@ $topconference-paperwriting
 暂不修改稿件文件。
 ```
 
+**逐处检查防御性写作**
+
+```text
+$topconference-paperwriting
+请逐处检查这篇稿件中不必要的防御性表达。
+每处列出原文、问题及原因，以及建议改写。
+保留必要的技术条件、证据边界和论断范围。
+先返回检查结果，不修改稿件文件。
+```
+
 ## 修改边界与偏好配置
 
 以明确的任务指令为准。“只加引用”只允许加入引用命令和必要的文献条目，保留现有正文与数学内容。“只改必要问题”应将可选润色单独列出。解释或评估请求不自动授权文件修改。句子级任务保持在句子级范围内，只处理必要的关联修复。
@@ -154,6 +166,7 @@ $topconference-paperwriting
 | 文件 | 用途 |
 |---|---|
 | [SKILL.md](SKILL.md) | 总入口、任务边界、证据原则和章节路由。 |
+| [press-conference-principle.md](references/press-conference-principle.md) | 以证据组织论文论证、明确优势、实验目的与防御性写作检查。 |
 | [opening-sections.md](references/opening-sections.md) | 标题、摘要、引言与贡献。 |
 | [related-work-and-citations.md](references/related-work-and-citations.md) | 相关工作、来源核验、只加引用与 BibTeX。 |
 | [method-and-appendix.md](references/method-and-appendix.md) | 方法、符号、算法、理论与附录组织。 |

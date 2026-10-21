@@ -22,6 +22,8 @@ A Codex skill for drafting, revising, and checking research papers in machine le
 | Refine LaTeX and delivery | Work on tables, captions, equations, layout, and requested bilingual comparison HTML or PDF updates. |
 | Audit or review a manuscript | Check cross-section consistency, consult current venue instructions, and prepare evidence-grounded reviewer-style assessments. |
 
+The built-in [press-conference writing principle](references/press-conference-principle.md) identifies the paper's strongest evidence-backed advantage and organizes the manuscript around it instead of a development diary. It explains the advantage explicitly, gives every experiment a role in the argument, keeps the abstract, introduction, and conclusion concise, and removes unnecessary defensive prose while preserving necessary conditions and evidence boundaries.
+
 An optional specialization addresses embodied AI, visual decision making, and adaptive computation. It is used only when relevant to the paper.
 
 ## Install
@@ -127,6 +129,16 @@ the current official instructions. Separate confirmed problems, unresolved
 questions, and optional improvements. Do not edit the manuscript yet.
 ```
 
+**Audit defensive writing occurrence by occurrence**
+
+```text
+$topconference-paperwriting
+Audit this manuscript for unnecessary defensive writing. For each occurrence,
+show the original passage, the issue and why it matters, and a suggested
+rewrite. Preserve necessary technical conditions, evidence boundaries, and
+claim scope. Return the audit without editing the manuscript.
+```
+
 ## Scope and preferences
 
 Explicit task instructions govern the work. “Only add citations” permits citation commands and necessary bibliography entries while preserving the existing text and mathematics. “Only necessary changes” keeps optional polish separate. A request to explain or assess does not authorize file edits. A sentence-level task should remain a sentence-level task, with only necessary dependent repairs.
@@ -156,6 +168,7 @@ Conference requirements must be checked for the named **venue, year, and stage**
 | File | Purpose |
 |---|---|
 | [SKILL.md](SKILL.md) | Entry point, task boundaries, evidence principles, and chapter routing. |
+| [press-conference-principle.md](references/press-conference-principle.md) | Evidence-led manuscript argument, explicit advantages, experiment purpose, and defensive-writing audits. |
 | [opening-sections.md](references/opening-sections.md) | Title, abstract, introduction, and contributions. |
 | [related-work-and-citations.md](references/related-work-and-citations.md) | Related work, source verification, citation-only edits, and BibTeX. |
 | [method-and-appendix.md](references/method-and-appendix.md) | Methods, notation, algorithms, theory, and appendix structure. |

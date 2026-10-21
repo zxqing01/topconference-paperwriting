@@ -4,6 +4,8 @@
 
 Synthesize the problem addressed, the central design idea, and the strongest established outcome. Do not repeat the full abstract or list every module and experiment. Numerical results may be retained when they carry the conclusion; repeating every percentage is unnecessary.
 
+Apply the [press-conference principle](press-conference-principle.md) so the closing reinforces the contribution introduced at the start. Avoid a new self-negating judgment or an expanded limitations discussion in the final sentence; place necessary boundaries where they clarify the evidence.
+
 A final interpretive sentence is useful when it identifies the supported research lesson. Delete generic lines such as “These results demonstrate the effectiveness of our approach” when they merely repeat the preceding measurements. Do not force a summary sentence after every result paragraph to prepare for the conclusion.
 
 Match the verb to the evidence:
